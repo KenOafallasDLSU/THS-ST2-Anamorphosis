@@ -17,10 +17,7 @@ public class AngleTracker : MonoBehaviour
     [SerializeField] private float correctDelta;
     [SerializeField] private float angleError;
 
-    [SerializeField] private Text camText;
-    [SerializeField] private Text targetText;
     [SerializeField] private Text distanceText;
-    [SerializeField] private Text camAngText;
     [SerializeField] private Text tarAngText;
     [SerializeField] private Text deltaAngText;
     [SerializeField] private Text goodText;
@@ -56,10 +53,7 @@ public class AngleTracker : MonoBehaviour
         }
 
         //update Test UI
-        camText.text = "Cam Pos: " + camera.transform.position.ToString();
-        targetText.text = "Tar Pos: " + target.transform.position.ToString();
         distanceText.text = "DIST: " + dist.ToString();
-        camAngText.text = "Cam Ang X: " + camera.transform.localRotation.eulerAngles.x.ToString() + " , Y: " + camera.transform.localRotation.eulerAngles.y.ToString();
         tarAngText.text = "Tar Ang X: " + target.transform.localRotation.eulerAngles.x.ToString() + " , Y: " + target.transform.localRotation.eulerAngles.y.ToString();
         deltaAngText.text = "DELTA: " + delta.ToString();
     }

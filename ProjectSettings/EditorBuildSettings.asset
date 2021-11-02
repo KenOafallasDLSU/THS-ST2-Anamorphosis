@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing/AngleChecking.unity
     guid: b8acd9bead80db44096cafb2e081dd1b
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelOne.unity
+    guid: 9e6406548137e3142b86bb3974a85dea
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelTwo.unity
+    guid: 8932ce7439980eb4d9e9fb95dc4c717c
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelThree.unity
+    guid: 0856a9db11dff564087e0e44fb70029f
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelFive.unity
+    guid: 1d30ee5c06654224d8f197c616fa7eea
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelSix.unity
+    guid: 75b59193ae0a1d545b984e776018ac50
   m_configObjects: {}
