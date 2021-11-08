@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1658766046}
+  - {fileID: 1195473101}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -517,7 +517,7 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!21 &1658766046
+--- !u!21 &1195473101
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -526,7 +526,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'marker-pebbles-markMaterial
 
-    20304'
+    23774'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -693,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5357332282009474361, guid: dcd8f293ffa10f644b2a5f5bcf7688e2, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5357332282009474361, guid: dcd8f293ffa10f644b2a5f5bcf7688e2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -949,9 +949,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1881871267}
     - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: angleError
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: tarAngText
       value: 
       objectReference: {fileID: 1881871269}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: correctDist
+      value: 0.9004018
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: correctDelta
+      value: 7.144491
+      objectReference: {fileID: 0}
     - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: deltaAngText
       value: 
@@ -960,6 +972,18 @@ PrefabInstance:
       propertyPath: distanceText
       value: 
       objectReference: {fileID: 1881871270}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: correctXAngle
+      value: 7.944302
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: correctYAngle
+      value: 179.0631
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: distanceError
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: modal
       value: 
@@ -974,7 +998,7 @@ PrefabInstance:
       objectReference: {fileID: 2128828187}
     - target: {fileID: 8625866592112569553, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8625866592112569553, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: m_LocalPosition.x
