@@ -9,6 +9,9 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Image inst_msg;
     [SerializeField] private Button x;
 
+    [SerializeField] private Canvas modal;
+    [SerializeField] private Text timerText;
+
     void Start()
     {
         inst_msg.gameObject.SetActive(false);
@@ -32,6 +35,13 @@ public class GameUI : MonoBehaviour
         instructions.gameObject.SetActive(true);
         inst_msg.gameObject.SetActive(false);
         x.gameObject.SetActive(false);
+    }
+
+    public void playAgain()
+    {
+        modal.gameObject.SetActive(false);
+        timerText.color = Color.white;
+        timerText.text = "0:00";
     }
 }
 
