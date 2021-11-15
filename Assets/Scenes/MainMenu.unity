@@ -2600,7 +2600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8770150521953919646}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3901048091064802558}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LevelNine
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &8770150522073216557
 RectTransform:
   m_ObjectHideFlags: 0
