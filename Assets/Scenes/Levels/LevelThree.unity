@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -151,7 +151,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427574691}
-  m_Mesh: {fileID: 1396835531}
+  m_Mesh: {fileID: 1240955172}
 --- !u!23 &427574693
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1621739930}
+  - {fileID: 1637509523}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -662,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5119f7e9d3f0bd34e8ca59a433beffa5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00039999932
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5119f7e9d3f0bd34e8ca59a433beffa5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -670,7 +670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5119f7e9d3f0bd34e8ca59a433beffa5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.19000003
+      value: 0.234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5119f7e9d3f0bd34e8ca59a433beffa5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -747,13 +747,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5119f7e9d3f0bd34e8ca59a433beffa5, type: 3}
   m_PrefabInstance: {fileID: 1130560093}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &1396835531
+--- !u!43 &1240955172
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ImageTargetMesh19774
+  m_Name: ImageTargetMesh25428
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &1621739930
+--- !u!21 &1637509523
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1173,7 +1173,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'marker-pebbles-markMaterial
 
-    20436'
+    25438'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
