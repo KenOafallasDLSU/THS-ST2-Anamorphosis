@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] private GameObject anamorphic;
+    [SerializeField] private GameObject whole;
+
     [SerializeField] private Canvas modal;
     [SerializeField] private Text timerText;
     [SerializeField] private Text finalTime;
@@ -38,6 +41,9 @@ public class Timer : MonoBehaviour
     {
         completed = true;
         timerText.color = Color.yellow;
+
+        anamorphic.gameObject.SetActive(false);
+        whole.gameObject.SetActive(true);
 
         modal.gameObject.SetActive(true);
         string time = timerText.text;
