@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private Text timerText;
     [SerializeField] private Text finalTime;
     private float startTime;
+    private float totalTime;
     private bool completed = false;
 
     // Start is called before the first frame update
@@ -29,10 +30,10 @@ public class Timer : MonoBehaviour
         if (completed)
             return;
 
-        float t = Time.time - startTime;
+        totalTime = Time.time - startTime;
 
-        string minutes = ((int)t / 60).ToString();
-        string seconds = (t % 60).ToString("00");
+        string minutes = ((int)totalTime / 60).ToString();
+        string seconds = (totalTime % 60).ToString("00");
 
         timerText.text = minutes + ":" + seconds;
     }
@@ -42,13 +43,23 @@ public class Timer : MonoBehaviour
         completed = true;
         timerText.color = Color.yellow;
 
+        // replace anamorphic model with whole model
         anamorphic.gameObject.SetActive(false);
         whole.gameObject.SetActive(true);
 
+        StartCoroutine(ShowWinPopup());
+
+        EventBroadcaster.Instance.RemoveObserver(EventNames.Anamorphosis_Events.ON_WIN);
+    }
+
+    public IEnumerator ShowWinPopup()
+    {
+        // 3 second delay
+        yield return new WaitForSeconds(3);
+
+        // show Win UI popup
         modal.gameObject.SetActive(true);
         string time = timerText.text;
         finalTime.text = "You completed the puzzle in " + time;
-
-        EventBroadcaster.Instance.RemoveObserver(EventNames.Anamorphosis_Events.ON_WIN);
     }
 }
