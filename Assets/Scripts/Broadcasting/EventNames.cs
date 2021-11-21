@@ -48,6 +48,11 @@ public class EventNames {
 
 	public class Anamorphosis_Events {
 		public const string ON_WIN = "ON_WIN";
+
+		public const string ON_MARKER_FOUND = "ON_MARKER_FOUND";
+		public const string ON_MARKER_LOST = "ON_MARKER_LOST";
+
+		public const string ON_MARKER_MODE_CHANGE = "ON_MARKER_MODE_CHANGE";
 	}
 }
 
