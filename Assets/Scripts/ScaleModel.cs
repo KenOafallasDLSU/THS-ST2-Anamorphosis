@@ -23,11 +23,6 @@ public class ScaleModel : MonoBehaviour
     [SerializeField] private float correctYAngle;
     [SerializeField] private float correctDelta;
 
-    [SerializeField] private Text distanceText;
-    [SerializeField] private Text tarAngText;
-    [SerializeField] private Text deltaAngText;
-    [SerializeField] private Text goodText;
-
     [SerializeField] private GameObject plane;
 
     void Start() {
@@ -36,15 +31,13 @@ public class ScaleModel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // get target center
         List<Vector3> targets = new List<Vector3>();
         targets.Add(this.target1.transform.position);
         targets.Add(this.target1.transform.position);
         center = getCenter(targets);
 
         this.markerdist = Mathf.Abs(target1.transform.position.z - target2.transform.position.z);
-        this.scale = 1f + (float)System.Math.Round(markerdist, 1); // more than one becomes jittery
+        this.scale = 1f + (float)System.Math.Round(markerdist, 1);
         this.transform.position = this.transform.position * scale;
         model.transform.localScale = new Vector3(scale, scale, scale);
         model.transform.position = (target1.transform.position + target2.transform.position) / 2f;
@@ -57,25 +50,15 @@ public class ScaleModel : MonoBehaviour
         float x = plane.transform.localRotation.eulerAngles.x;
         float y = plane.transform.localRotation.eulerAngles.y;
 
-        bool goodDist = dist > correctDist - distanceError && dist < correctDist + distanceError;
-        bool goodAngle = delta > correctDelta - angleError && delta < correctDelta + angleError;
+        bool goodDist = dist > correctDist * scale - distanceError && dist < correctDist * scale + distanceError;
+        bool goodAngle = delta > correctDelta * scale - angleError && delta < correctDelta * scale + angleError;
         bool goodX = x > correctXAngle - angleError && x < correctXAngle + angleError;
         bool goodY = y > correctYAngle - angleError && y < correctYAngle + angleError;
 
         if (goodDist && goodAngle && goodX && goodY)
         {
             EventBroadcaster.Instance.PostEvent(EventNames.Anamorphosis_Events.ON_WIN);
-            goodText.text = "GOOD!!!";
         }
-        else
-        {
-            goodText.text = "NOT GOOD";
-        }
-
-        //update Test UI
-        distanceText.text = "DIST: " + dist.ToString();
-        tarAngText.text = "Tar Ang X: " + plane.transform.localRotation.eulerAngles.x.ToString() + " , Y: " + plane.transform.localRotation.eulerAngles.y.ToString();
-        deltaAngText.text = "DELTA: " + delta.ToString();
     }
 
     public static Vector3 getCenter(List<Vector3> v)
