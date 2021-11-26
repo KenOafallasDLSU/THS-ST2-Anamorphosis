@@ -36,12 +36,5 @@ public class GameUI : MonoBehaviour
         inst_msg.gameObject.SetActive(false);
         x.gameObject.SetActive(false);
     }
-
-    public void playAgain()
-    {
-        modal.gameObject.SetActive(false);
-        timerText.color = Color.white;
-        timerText.text = "0:00";
-    }
 }
 
