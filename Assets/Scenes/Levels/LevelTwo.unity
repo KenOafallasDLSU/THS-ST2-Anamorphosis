@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 7eda7565baa70e14b9f1256ebedcf496, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: b213080918ab78247bc1eeb16f822788, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -355,7 +355,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 986957492}
+  - {fileID: 436596008}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -532,6 +532,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1824d3ca9a04fb3489fbb30d3a4222bc, type: 3}
   m_PrefabInstance: {fileID: 433970499}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &436596008
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'marker-pebbles-markMaterial
+
+    63278'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1dd23cc28fb7c664585d3e42694d3908, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!43 &749255970
 Mesh:
   m_ObjectHideFlags: 0
@@ -721,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 1339955604}
     - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: angleError
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: tarAngText
@@ -753,7 +782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2367204584972505385, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: distanceError
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: modal
@@ -914,35 +943,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!21 &986957492
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'marker-pebbles-markMaterial
-
-    23882'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1dd23cc28fb7c664585d3e42694d3908, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1334033105
 PrefabInstance:
   m_ObjectHideFlags: 0
