@@ -898,6 +898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 02. Empire State Building
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f2ad1b498c3fa6b4badb548832f25458, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1471755862479179666, guid: f2ad1b498c3fa6b4badb548832f25458, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1129,7 +1133,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 229370e2d33c0744aada1e4299bc4062, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8c6dd69f6bc524f49b868e2b7e724458, type: 2}
+      objectReference: {fileID: 2100000, guid: f7311f61810d53d4989ecb4ee5b01bdb, type: 2}
     - target: {fileID: 919132149155446097, guid: 229370e2d33c0744aada1e4299bc4062, type: 3}
       propertyPath: m_Name
       value: 02. Empire State Building (whole)
@@ -1145,35 +1149,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 229370e2d33c0744aada1e4299bc4062, type: 3}
   m_PrefabInstance: {fileID: 1188476770}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1516090961
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 'marker-pebbles-markMaterial
-
-    18288'
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1dd23cc28fb7c664585d3e42694d3908, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats: []
-    m_Colors:
-    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1001 &1561390800
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1283,7 +1258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1516090961}
+  - {fileID: 2058535041}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1373,6 +1348,35 @@ Transform:
   m_Father: {fileID: 1096081448}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &2058535041
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'marker-pebbles-markMaterial
+
+    22916'
+  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 1dd23cc28fb7c664585d3e42694d3908, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &2139209073 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5357332280259095641, guid: dcd8f293ffa10f644b2a5f5bcf7688e2, type: 3}

@@ -202,6 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01. Suzanne
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a6070894f2a0b14da3dd8da3a2fda2f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1698732722818636794, guid: 7a6070894f2a0b14da3dd8da3a2fda2f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -387,7 +391,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1866408843}
+  - {fileID: 2097431321}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -668,7 +672,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f519af3226576794091009fe0aac6818, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e70cec3da9310894aa8cf0e91e656c24, type: 2}
+      objectReference: {fileID: 2100000, guid: f7311f61810d53d4989ecb4ee5b01bdb, type: 2}
     - target: {fileID: 919132149155446097, guid: f519af3226576794091009fe0aac6818, type: 3}
       propertyPath: m_Name
       value: 01. Suzanne (whole)
@@ -1406,7 +1410,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 1.738, y: 90, z: 0.25}
---- !u!21 &1866408843
+--- !u!21 &2097431321
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -1415,7 +1419,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'marker-pebbles-markMaterial
 
-    16492'
+    22112'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
