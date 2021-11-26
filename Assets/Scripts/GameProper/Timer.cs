@@ -47,6 +47,9 @@ public class Timer : MonoBehaviour
         anamorphic.gameObject.SetActive(false);
         whole.gameObject.SetActive(true);
 
+        // play SFX
+        SFXManager.sfxInstance.Audio.PlayOneShot(SFXManager.sfxInstance.WinSFX);
+
         StartCoroutine(ShowWinPopup());
 
         EventBroadcaster.Instance.RemoveObserver(EventNames.Anamorphosis_Events.ON_WIN);
