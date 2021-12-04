@@ -57,8 +57,8 @@ public class Timer : MonoBehaviour
 
     public IEnumerator ShowWinPopup()
     {
-        // 3 second delay
-        yield return new WaitForSeconds(3);
+        // 2 second delay
+        yield return new WaitForSeconds(2);
 
         // show Win UI popup
         modal.gameObject.SetActive(true);
