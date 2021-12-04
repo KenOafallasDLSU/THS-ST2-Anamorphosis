@@ -1799,6 +1799,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1635441424197042506}
     m_Modifications:
+    - target: {fileID: 4845805189740313344, guid: 7aa663a19c21ed34bb18fa60ad076d68, type: 3}
+      propertyPath: WinSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 421f6b79c134eeb4395aef18939c683b, type: 3}
     - target: {fileID: 4845805189740313345, guid: 7aa663a19c21ed34bb18fa60ad076d68, type: 3}
       propertyPath: m_RootOrder
       value: 9
