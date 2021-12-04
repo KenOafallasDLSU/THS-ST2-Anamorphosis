@@ -7,6 +7,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] private GameObject anamorphic;
     [SerializeField] private GameObject whole;
+    [SerializeField] private GameObject fireworks;
 
     [SerializeField] private Canvas modal;
     [SerializeField] private Text timerText;
@@ -19,6 +20,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         modal.gameObject.SetActive(false);
+        fireworks.gameObject.SetActive(false);
         startTime = Time.time;
 
         EventBroadcaster.Instance.AddObserver(EventNames.Anamorphosis_Events.ON_WIN, this.Completed);
@@ -49,6 +51,8 @@ public class Timer : MonoBehaviour
 
         // play SFX
         SFXManager.sfxInstance.Audio.PlayOneShot(SFXManager.sfxInstance.WinSFX);
+        // activate fireworks
+        fireworks.gameObject.SetActive(true);
 
         StartCoroutine(ShowWinPopup());
 
