@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &190323414
+--- !u!21 &331859401
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: 'marker-pebbles-markMaterial
 
-    142876'
+    158930'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -200,7 +200,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 190323414}
+  - {fileID: 331859401}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1095,6 +1095,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2128828186}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
+      propertyPath: fireworks
+      value: 
+      objectReference: {fileID: 2128828190}
+    - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: timerText
       value: 
       objectReference: {fileID: 2128828187}
@@ -1407,6 +1411,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf9f0cb7585c6647adfcdfd85360a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2128828190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7683875574583793206, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
+  m_PrefabInstance: {fileID: 2128828185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2132437542
 PrefabInstance:
   m_ObjectHideFlags: 0
