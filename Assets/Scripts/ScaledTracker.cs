@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Vuforia;
 using System;
 
-public class ScaleModel : MonoBehaviour
+public class ScaledTracker : MonoBehaviour
 {
     [SerializeField] private GameObject camera;
     [SerializeField] public GameObject model;
@@ -13,7 +13,7 @@ public class ScaleModel : MonoBehaviour
     [SerializeField] public GameObject target2;
     private float markerdist;
     private float scale;
-    private Vector3 center;
+    private Vector3 centerPosition;
 
     [SerializeField] private float distanceError;
     [SerializeField] private float angleError;
@@ -23,30 +23,41 @@ public class ScaleModel : MonoBehaviour
     [SerializeField] private float correctYAngle;
     [SerializeField] private float correctDelta;
 
+    // pseudo-target
     [SerializeField] private GameObject plane;
 
-    void Start() {
+    void Start()
+    {
     }
 
     // Update is called once per frame
     void Update()
     {
-        List<Vector3> targets = new List<Vector3>();
-        targets.Add(this.target1.transform.position);
-        targets.Add(this.target1.transform.position);
-        center = getCenter(targets);
+        // the list of Vector3 positions for every marker
+        List<Vector3> targetPosition = new List<Vector3>();
 
+        // manually add markers to the list
+        targetPosition.Add(target1.transform.position);
+        targetPosition.Add(target2.transform.position);
+
+        // get the center of all markers in the list
+        centerPosition = getCenterPosition(targetPosition);
+
+        // distance of the two markers (for all - not yet implemented)
         this.markerdist = Mathf.Abs(target1.transform.position.z - target2.transform.position.z);
-        this.scale = 1f + (float)System.Math.Round(markerdist, 1);
-        this.transform.position = this.transform.position * scale;
-        model.transform.localScale = new Vector3(scale, scale, scale);
-        model.transform.position = (target1.transform.position + target2.transform.position) / 2f;
 
-        plane.transform.position = (target1.transform.position + target2.transform.position) / 2f;
+        // scale starts at 1, and scales linearly depending on the distance of the two markers
+        this.scale = 1f + (float)System.Math.Round(markerdist, 1);
+
+        // the positions also needs to scale to preserve anamorphism
+        // the rotation follows the main target's rotation
+        model.transform.localScale = new Vector3(scale, scale, scale);
+        model.transform.position = centerPosition;
+        plane.transform.position = centerPosition;
         plane.transform.localRotation = target1.transform.localRotation;
 
-        float dist = Vector3.Distance(camera.transform.position, center);
-        float delta = Vector3.Angle(camera.transform.forward, center - camera.transform.position);
+        float dist = Vector3.Distance(camera.transform.position, centerPosition);
+        float delta = Vector3.Angle(camera.transform.forward, centerPosition - camera.transform.position);
         float x = plane.transform.localRotation.eulerAngles.x;
         float y = plane.transform.localRotation.eulerAngles.y;
 
@@ -61,12 +72,14 @@ public class ScaleModel : MonoBehaviour
         }
     }
 
-    public static Vector3 getCenter(List<Vector3> v)
+    // returns the Vector3 center position of the markers in the list
+    public static Vector3 getCenterPosition(List<Vector3> v)
     {
-        Vector3 temp = Vector3.zero;
-        foreach (Vector3 vec in v){
+        Vector3 temp = new Vector3();
+        foreach (Vector3 vec in v)
+        {
             temp += vec;
         }
         return temp / v.Count;
-    } 
+    }
 }
