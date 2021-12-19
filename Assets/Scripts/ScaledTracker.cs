@@ -26,6 +26,9 @@ public class ScaledTracker : MonoBehaviour
     // pseudo-target
     [SerializeField] private GameObject plane;
 
+    // the list of Vector3 positions for every marker
+    List<Vector3> targetPosition = new List<Vector3>();
+
     void Start()
     {
     }
@@ -33,15 +36,29 @@ public class ScaledTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // the list of Vector3 positions for every marker
-        List<Vector3> targetPosition = new List<Vector3>();
-
         // manually add markers to the list
-        targetPosition.Add(target1.transform.position);
-        targetPosition.Add(target2.transform.position);
+        this.targetPosition.Add(target1.transform.position);
+        this.targetPosition.Add(target2.transform.position);
 
         // get the center of all markers in the list
-        centerPosition = getCenterPosition(targetPosition);
+        centerPosition = getCenterPosition(this.targetPosition);
+
+        // contains the maximum x and y distances among the marker/s
+        Vector3 max = getMaxVector(this.targetPosition);
+
+        // figure out size of targets in real time
+        // 0.1125 (width of markers), 0.02 (height of markers)
+        // numbers are rounded to the nearest third digit to avoid jittering and flickerin gof the model
+        if (Math.Round(max.x, 3) > 3 * 0.0113 || Math.Round(max.y, 3) > 3 * 0.02)
+        {
+            // deactivates the model
+            this.model.SetActive(false);
+        }
+        else if (this.model.activeInHierarchy == false)
+        {
+            // activates the model
+            this.model.SetActive(true);
+        }
 
         // distance of the two markers (for all - not yet implemented)
         this.markerdist = Mathf.Abs(target1.transform.position.z - target2.transform.position.z);
@@ -70,16 +87,32 @@ public class ScaledTracker : MonoBehaviour
         {
             EventBroadcaster.Instance.PostEvent(EventNames.Anamorphosis_Events.ON_WIN);
         }
+
+        this.targetPosition.Clear();
     }
+
 
     // returns the Vector3 center position of the markers in the list
     public static Vector3 getCenterPosition(List<Vector3> v)
     {
         Vector3 temp = new Vector3();
         foreach (Vector3 vec in v)
-        {
             temp += vec;
-        }
         return temp / v.Count;
     }
+
+    // returns a vector with maximum x and y distances
+    public static Vector3 getMaxVector(List<Vector3> v)
+    {
+        float x = 0;
+        float y = 0;
+        foreach (Vector3 a in v)
+            foreach( Vector3 b in v)
+            {
+                x = Math.Abs(a.x - b.x) > x ? Math.Abs(a.x - b.x) : x;
+                y = Math.Abs(a.y - b.y) > y ? Math.Abs(a.y - b.y) : y;
+            }
+        return new Vector3(x, y, 0);
+    }
+
 }
