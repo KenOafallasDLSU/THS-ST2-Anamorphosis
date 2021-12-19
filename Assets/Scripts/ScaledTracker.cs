@@ -46,11 +46,8 @@ public class ScaledTracker : MonoBehaviour
         Vector3 max = getMaxVector(this.targetPosition);
 
         // figure out size of targets in real time
-        // cant figure out how to do this
-        if (max.x > 0.01125 || max.y > 0.02)
+        if (max.x, 3 > 3 * 0.01125 || max.y, 3 > 3 * 0.02)
         {
-            Debug.Log("x: " + max.x);
-            Debug.Log("y: " + max.y);
             this.model.SetActive(false);
         }
         else if (this.model.activeInHierarchy == false)
