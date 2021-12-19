@@ -43,16 +43,20 @@ public class ScaledTracker : MonoBehaviour
         // get the center of all markers in the list
         centerPosition = getCenterPosition(this.targetPosition);
 
+        // contains the maximum x and y distances among the marker/s
         Vector3 max = getMaxVector(this.targetPosition);
 
         // figure out size of targets in real time
-        if (max.x, 3 > 3 * 0.01125 || max.y, 3 > 3 * 0.02)
+        // 0.1125 (width of markers), 0.02 (height of markers)
+        // numbers are rounded to the nearest third digit to avoid jittering and flickerin gof the model
+        if (Math.Round(max.x, 3) > 3 * 0.0113 || Math.Round(max.y, 3) > 3 * 0.02)
         {
+            // deactivates the model
             this.model.SetActive(false);
         }
         else if (this.model.activeInHierarchy == false)
         {
-            // set visibility true
+            // activates the model
             this.model.SetActive(true);
         }
 
@@ -97,7 +101,7 @@ public class ScaledTracker : MonoBehaviour
         return temp / v.Count;
     }
 
-    // returns the maximim x distance
+    // returns a vector with maximum x and y distances
     public static Vector3 getMaxVector(List<Vector3> v)
     {
         float x = 0;
