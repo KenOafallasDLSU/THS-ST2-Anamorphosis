@@ -29,13 +29,13 @@ public class GameUI : MonoBehaviour
 
     public void showInst()
     {
-        helpBtn.gameObject.SetActive(false);
+        //helpBtn.gameObject.SetActive(false);
         instructions.gameObject.SetActive(true);
     }
 
     public void closeInst()
     {
-        helpBtn.gameObject.SetActive(true);
+        //helpBtn.gameObject.SetActive(true);
         instructions.gameObject.SetActive(false);
     }
 
