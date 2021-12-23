@@ -326,17 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &406675230 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1635441423934577012, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
-  m_PrefabInstance: {fileID: 516632995}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &425780798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cb7d8e3216e26d54abdf84f7784031ae, type: 3}
@@ -582,6 +571,33 @@ PrefabInstance:
       objectReference: {fileID: 703344057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
+--- !u!114 &516632996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7051992436391297272, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
+  m_PrefabInstance: {fileID: 516632995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &516632997 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 775738428339143050, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
+  m_PrefabInstance: {fileID: 516632995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &516632998 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 8155422536733351779, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
+  m_PrefabInstance: {fileID: 516632995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &703344057 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4577948114526784531, guid: 6df2f47229a8b6e45be5e4fc6b9daa01, type: 3}
@@ -649,7 +665,7 @@ PrefabInstance:
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: modal
       value: 
-      objectReference: {fileID: 1374604298}
+      objectReference: {fileID: 516632998}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: whole
       value: 
@@ -657,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: finalTime
       value: 
-      objectReference: {fileID: 815519571}
+      objectReference: {fileID: 516632996}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: fireworks
       value: 
@@ -665,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: timerText
       value: 
-      objectReference: {fileID: 406675230}
+      objectReference: {fileID: 516632997}
     - target: {fileID: 2790253607938617015, guid: c4a69987cc2fc2b44b28f62cb163831e, type: 3}
       propertyPath: anamorphic
       value: 
@@ -809,17 +825,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!114 &815519571 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1635441423114503901, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
-  m_PrefabInstance: {fileID: 516632995}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1181149422
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -931,11 +936,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.82089555, g: 0.82089555, b: 0.82089555, a: 1}
   m_BuildTextureStacks: []
---- !u!223 &1374604298 stripped
-Canvas:
-  m_CorrespondingSourceObject: {fileID: 1635441422438594904, guid: 2dbc21f9e8f2667409d841f5ac5ddc1a, type: 3}
-  m_PrefabInstance: {fileID: 516632995}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1540384878
 Mesh:
   m_ObjectHideFlags: 0
