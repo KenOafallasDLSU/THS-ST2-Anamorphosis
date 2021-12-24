@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 3683993782781944059}
   - component: {fileID: 1406558044259772858}
   m_Layer: 5
-  m_Name: Level Select Button
+  m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2234,8 +2234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 110, y: -710}
-  m_SizeDelta: {x: 210, y: 70}
+  m_AnchoredPosition: {x: 120, y: -710}
+  m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8370463445228666482
 CanvasRenderer:
@@ -2265,7 +2265,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 913a09ba7f077a14ebb17bac858e3a61, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06ec5af9d459ff9429cded6a34b80f19, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2367,8 +2367,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -110, y: -710}
-  m_SizeDelta: {x: 210, y: 70}
+  m_AnchoredPosition: {x: -120, y: -710}
+  m_SizeDelta: {x: 240, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8398690182396674732
 CanvasRenderer:
@@ -2531,7 +2531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 186e651117bd43a45abce660003005b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75dbc3920a0c4bf43a8c79e0ff7460f7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
