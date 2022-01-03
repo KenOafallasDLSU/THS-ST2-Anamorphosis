@@ -44,8 +44,6 @@ public class ScaledTracker : MonoBehaviour
         this.targetPosition.Add(target3.transform.position);
         this.targetPosition.Add(target4.transform.position);
 
-        Debug.Log(targetPosition);
-
         // get the center of all markers in the list
         centerPosition = getCenterPosition(this.targetPosition);
 
