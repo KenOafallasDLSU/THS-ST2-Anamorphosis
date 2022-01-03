@@ -11,6 +11,8 @@ public class ScaledTracker : MonoBehaviour
     [SerializeField] public GameObject model;
     [SerializeField] public GameObject target1;
     [SerializeField] public GameObject target2;
+    [SerializeField] public GameObject target3;
+    [SerializeField] public GameObject target4;
     private float markerdist;
     private float scale;
     private Vector3 centerPosition;
@@ -39,6 +41,8 @@ public class ScaledTracker : MonoBehaviour
         // manually add markers to the list
         this.targetPosition.Add(target1.transform.position);
         this.targetPosition.Add(target2.transform.position);
+        //this.targetPosition.Add(target3.transform.position);
+        //this.targetPosition.Add(target4.transform.position);
 
         // get the center of all markers in the list
         centerPosition = getCenterPosition(this.targetPosition);
@@ -46,19 +50,10 @@ public class ScaledTracker : MonoBehaviour
         // contains the maximum x and y distances among the marker/s
         Vector3 max = getMaxVector(this.targetPosition);
 
-        // figure out size of targets in real time
-        // 0.1125 (width of markers), 0.02 (height of markers)
-        // numbers are rounded to the nearest third digit to avoid jittering and flickerin gof the model
-        if (Math.Round(max.x, 3) > 3 * 0.0113 || Math.Round(max.y, 3) > 3 * 0.02)
-        {
-            // deactivates the model
-            this.model.SetActive(false);
-        }
+        if (this.scale > 1.5) // refers to the length of 2 markers
+            this.model.SetActive(false); // deactivates the model
         else if (this.model.activeInHierarchy == false)
-        {
-            // activates the model
-            this.model.SetActive(true);
-        }
+            this.model.SetActive(true); // activates the model
 
         // distance of the two markers (for all - not yet implemented)
         this.markerdist = Mathf.Abs(target1.transform.position.z - target2.transform.position.z);
