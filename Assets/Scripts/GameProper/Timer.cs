@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
     public void Completed()
     {
         completed = true;
-        timerText.color = Color.yellow;
+        // timerText.color = Color.yellow;
 
         // replace anamorphic model with whole model
         anamorphic.gameObject.SetActive(false);
