@@ -40,7 +40,7 @@ MonoBehaviour:
     autoImportArcore: 0
   playmode:
     mSequencePath: 
-    playModeType: 0
+    playModeType: 2
   webcam:
     renderTextureLayer: 30
   packageInformation:

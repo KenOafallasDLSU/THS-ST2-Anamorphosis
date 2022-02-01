@@ -47,7 +47,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing/MarkerDetection.unity
     guid: 0701c0eed98a4114ba99f3ca56fd8ec8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing/DistanceGetter.unity
     guid: 4dbe5a1d63a951944b35b9849f1d34af
+  - enabled: 1
+    path: Assets/Scenes/Testing/Transforms.unity
+    guid: 3135b4272f62c2c4c9332d26b8ee20bc
   m_configObjects: {}

@@ -6,9 +6,11 @@ public class MarkerDetection : MonoBehaviour
 {
     string[] markerArray = {
         ParamConstants.Marker_Names.PEBBLES,
-        ParamConstants.Marker_Names.WOODCHIPS
+        ParamConstants.Marker_Names.WOODCHIPS,
+        ParamConstants.Marker_Names.GRASS,
+        ParamConstants.Marker_Names.ASPHALT
     };
-    bool[] statusArray = {false, false};
+    bool[] statusArray = {false, false, false, false};
     string trackingMode = ParamConstants.Tracking_Modes.ZERO_MARKER_MODE;
 
     // Start is called before the first frame update
@@ -24,7 +26,7 @@ public class MarkerDetection : MonoBehaviour
         bool status = parameters.GetBoolExtra(ParamConstants.Extra_Keys.MARKER_STATUS, false);
 
         UpdateMarkerStatus(marker, status);
-        Debug.Log("PEBBLES: " + statusArray[0] + ", WOODCHIPS: " + statusArray[1]);
+        Debug.Log("PEBBLES: " + statusArray[0] + ", WOODCHIPS: " + statusArray[1] + ", GRASS: " + statusArray[2] + ", ASPHALT: " + statusArray[3]);
 
         string newTrackingMode = CheckMarkerMode();
         if(trackingMode != newTrackingMode)
@@ -45,7 +47,9 @@ public class MarkerDetection : MonoBehaviour
 
     private string CheckMarkerMode()
     {
-        if (statusArray[0] && statusArray[1])
+        if(statusArray[0] && statusArray[1] && statusArray[2] && statusArray[3])
+            return ParamConstants.Tracking_Modes.FOUR_MARKER_MODE;
+        else if (statusArray[0] && statusArray[1])
             return ParamConstants.Tracking_Modes.TWO_MARKER_MODE;
         else if (statusArray[0] && !statusArray[1])
             return ParamConstants.Tracking_Modes.ONE_MARKER_MODE;

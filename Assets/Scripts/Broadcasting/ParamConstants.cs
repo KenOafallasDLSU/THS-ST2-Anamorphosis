@@ -17,6 +17,7 @@ public class ParamConstants {
 		public const string ZERO_MARKER_MODE = "ZERO";
 		public const string ONE_MARKER_MODE = "ONE";
 		public const string TWO_MARKER_MODE = "TWO";
+		public const string FOUR_MARKER_MODE = "FOUR";
 	}
 
     public class Extra_Keys {
