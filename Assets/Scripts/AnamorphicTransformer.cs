@@ -8,26 +8,25 @@ public class AnamorphicTransformer : MonoBehaviour
     [SerializeField] GameObject[] sliceArray;
     [SerializeField] Vector3 solutionPoint;
     string newMode;
-    int tracker;
+    //int tracker;
 
     // Start is called before the first frame update
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(EventNames.Anamorphosis_Events.ON_MARKER_MODE_CHANGE, this.OnMarkerModeChange);
 
-        newMode = ParamConstants.Tracking_Modes.ONE_MARKER_MODE;
-        tracker = 0;
-
-        Anamorphosize();
+        newMode = ParamConstants.Tracking_Modes.ZERO_MARKER_MODE;
     }
 
     private void Anamorphosize()
     {
-        foreach (GameObject slice in sliceArray)
+        foreach (GameObject origslice in sliceArray)
         {
             /**
             * Randomizing scale
             */
+            GameObject slice = GameObject.Instantiate(origslice);
+            slice.SetActive(true);
 
             //randomly scale
             float s = Random.value + 0.5f;
@@ -55,15 +54,18 @@ public class AnamorphicTransformer : MonoBehaviour
             * Change parent based on scale
             */
 
+            //Debug.Log(newMode);
             // for one marker, parent everything to that marker
             if(newMode == ParamConstants.Tracking_Modes.ONE_MARKER_MODE)
             {
+                //Debug.Log("PLACED IN ONE");
                 slice.transform.parent = markerArray[0].transform;
             }
             // for two markers, parent larger slices to farther marker, smmaller to closer marker
             else if(newMode == ParamConstants.Tracking_Modes.TWO_MARKER_MODE)
             {
-                if(s > 1.0f)
+                //Debug.Log("PLACED IN TWO");
+                if(s > 1.0f) //check if father/closer to the solution point
                     slice.transform.parent = markerArray[0].transform;
                 else
                     slice.transform.parent = markerArray[1].transform;
@@ -72,7 +74,8 @@ public class AnamorphicTransformer : MonoBehaviour
             // then parent to left marker if closer to left, accordingly for right marker
             else if(newMode == ParamConstants.Tracking_Modes.FOUR_MARKER_MODE)
             {
-                if(s > 1.0f)
+                //Debug.Log("PLACED IN THREE");
+                if(s > 1.0f) //check if father/closer to the solution point
                 {
                     float xmid = (markerArray[0].transform.position.x + markerArray[1].transform.position.x)/2;
                     if(slice.transform.position.x < xmid)
@@ -89,18 +92,31 @@ public class AnamorphicTransformer : MonoBehaviour
                         slice.transform.parent = markerArray[3].transform;
                 }
             }
+            else
+            {
+                //Debug.Log("PLACED IN ZERO");
+                Destroy(slice);
+            }
         }
-
-        tracker += 1;
-        if (tracker > 2)
-            tracker = 0;
+        //Debug.Log("ANAMORPHOSIZED");
     }
 
     private void OnMarkerModeChange(Parameters parameters)
     {
-        string newMode = parameters.GetStringExtra(ParamConstants.Extra_Keys.MARKER_MODE, ParamConstants.Tracking_Modes.ONE_MARKER_MODE);
+        foreach (GameObject marker in markerArray)
+        {
+            foreach (Transform child in marker.transform)
+            {
+                Destroy(child.gameObject);
+            }
+            Debug.Log("DELETED");
+        }
 
-        Anamorphosize();
+        newMode = parameters.GetStringExtra(ParamConstants.Extra_Keys.MARKER_MODE, ParamConstants.Tracking_Modes.ZERO_MARKER_MODE);
+        Debug.Log(newMode);
+
+        if(newMode != ParamConstants.Tracking_Modes.ZERO_MARKER_MODE)
+            Anamorphosize();
     }
 
     private void OnDestroy()

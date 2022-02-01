@@ -17,16 +17,16 @@ public class ScaledTracker : MonoBehaviour
     private float scale;
     private Vector3 centerPosition;
 
-    [SerializeField] private float distanceError;
-    [SerializeField] private float angleError;
+    // [SerializeField] private float distanceError;
+    // [SerializeField] private float angleError;
 
-    [SerializeField] private float correctDist;
-    [SerializeField] private float correctXAngle;
-    [SerializeField] private float correctYAngle;
-    [SerializeField] private float correctDelta;
+    // [SerializeField] private float correctDist;
+    // [SerializeField] private float correctXAngle;
+    // [SerializeField] private float correctYAngle;
+    // [SerializeField] private float correctDelta;
 
     // pseudo-target
-    [SerializeField] private GameObject plane;
+    //[SerializeField] private GameObject plane;
 
     // the list of Vector3 positions for every marker
     List<Vector3> targetPosition = new List<Vector3>();
@@ -63,23 +63,23 @@ public class ScaledTracker : MonoBehaviour
         // the rotation follows the main target's rotation
         model.transform.localScale = new Vector3(scale, scale, scale);
         model.transform.position = centerPosition;
-        plane.transform.position = centerPosition;
-        plane.transform.localRotation = target1.transform.localRotation;
+        // plane.transform.position = centerPosition;
+        // plane.transform.localRotation = target1.transform.localRotation;
 
-        float dist = Vector3.Distance(camera.transform.position, centerPosition);
-        float delta = Vector3.Angle(camera.transform.forward, centerPosition - camera.transform.position);
-        float x = plane.transform.localRotation.eulerAngles.x;
-        float y = plane.transform.localRotation.eulerAngles.y;
+        // float dist = Vector3.Distance(camera.transform.position, centerPosition);
+        // float delta = Vector3.Angle(camera.transform.forward, centerPosition - camera.transform.position);
+        // float x = plane.transform.localRotation.eulerAngles.x;
+        // float y = plane.transform.localRotation.eulerAngles.y;
 
-        bool goodDist = dist > correctDist * scale - distanceError && dist < correctDist * scale + distanceError;
-        bool goodAngle = delta > correctDelta * scale - angleError && delta < correctDelta * scale + angleError;
-        bool goodX = x > correctXAngle - angleError && x < correctXAngle + angleError;
-        bool goodY = y > correctYAngle - angleError && y < correctYAngle + angleError;
+        // bool goodDist = dist > correctDist * scale - distanceError && dist < correctDist * scale + distanceError;
+        // bool goodAngle = delta > correctDelta * scale - angleError && delta < correctDelta * scale + angleError;
+        // bool goodX = x > correctXAngle - angleError && x < correctXAngle + angleError;
+        // bool goodY = y > correctYAngle - angleError && y < correctYAngle + angleError;
 
-        if (goodDist && goodAngle && goodX && goodY)
-        {
-            EventBroadcaster.Instance.PostEvent(EventNames.Anamorphosis_Events.ON_WIN);
-        }
+        // if (goodDist && goodAngle && goodX && goodY)
+        // {
+        //     EventBroadcaster.Instance.PostEvent(EventNames.Anamorphosis_Events.ON_WIN);
+        // }
 
         this.targetPosition.Clear();
     }
