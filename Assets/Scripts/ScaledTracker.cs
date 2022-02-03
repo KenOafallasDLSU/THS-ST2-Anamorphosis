@@ -40,12 +40,20 @@ public class ScaledTracker : MonoBehaviour
     {
         // manually add markers to the list
         this.targetPosition.Add(target1.transform.position);
+        Debug.Log(target1.transform.position);
         this.targetPosition.Add(target2.transform.position);
+        Debug.Log(target2.transform.position);
         this.targetPosition.Add(target3.transform.position);
+        Debug.Log(target3.transform.position);
         this.targetPosition.Add(target4.transform.position);
+        Debug.Log(target4.transform.position);
+
+        Debug.Log("Cycle");
 
         // get the center of all markers in the list
         centerPosition = getCenterPosition(this.targetPosition);
+
+        //Debug.Log(centerPosition);
 
         // contains the maximum x and y distances among the marker/s
         Vector3 max = getMaxVector(this.targetPosition);
