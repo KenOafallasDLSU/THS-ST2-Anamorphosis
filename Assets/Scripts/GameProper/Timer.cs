@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private GameObject anamorphic;
+    [SerializeField] private GameObject[] markerArray;
     [SerializeField] private GameObject whole;
     [SerializeField] private GameObject fireworks;
 
@@ -46,7 +46,14 @@ public class Timer : MonoBehaviour
         // timerText.color = Color.yellow;
 
         // replace anamorphic model with whole model
-        anamorphic.gameObject.SetActive(false);
+        foreach (GameObject marker in markerArray)
+        {
+            foreach (Transform child in marker.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
         whole.gameObject.SetActive(true);
 
         // play SFX
