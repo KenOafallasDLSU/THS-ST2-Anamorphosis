@@ -49,9 +49,9 @@ public class AnamorphicTransformer : MonoBehaviour
             Debug.Log(camera.transform.position);
             Debug.Log(solutionPoint.transform.position);
 
-            bool goodX = cam_x > sol_x-0.02 && cam_x < cam_x+0.02;
-            bool goodY = cam_y > sol_y-0.02 && cam_y < cam_y+0.02;
-            bool goodZ = cam_z > sol_z-0.02 && cam_z < cam_z+0.02;
+            bool goodX = cam_x > sol_x-0.02 && cam_x < sol_x+0.02;
+            bool goodY = cam_y > sol_y-0.02 && cam_y < sol_y+0.02;
+            bool goodZ = cam_z > sol_z-0.02 && cam_z < sol_z+0.02;
 
             if(goodX && goodY && goodZ)
             {
