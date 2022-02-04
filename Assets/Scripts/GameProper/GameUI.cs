@@ -10,14 +10,11 @@ public class GameUI : MonoBehaviour
     [SerializeField] private Button offBtn;
     [SerializeField] private Image instructions;
 
-    [SerializeField] private Canvas modal;
-    [SerializeField] private Text timerText;
     [SerializeField] private GameObject boundingBox;
 
     void Start()
     {
         instructions.gameObject.SetActive(false);
-        modal.gameObject.SetActive(false);
         offBtn.gameObject.SetActive(false);
     }
 
