@@ -163,13 +163,13 @@ public class AnamorphicTransformer : MonoBehaviour
                     if(slice.transform.position.x < xmid)
                         slice.transform.parent = markerArray[0].transform;
                     else
-                        slice.transform.parent = markerArray[1].transform;
+                        slice.transform.parent = markerArray[2].transform;
                 }
                 else
                 {
                     float xmid = (markerArray[2].transform.position.x + markerArray[3].transform.position.x)/2;
                     if(slice.transform.position.x < xmid)
-                        slice.transform.parent = markerArray[2].transform;
+                        slice.transform.parent = markerArray[1].transform;
                     else
                         slice.transform.parent = markerArray[3].transform;
                 }
