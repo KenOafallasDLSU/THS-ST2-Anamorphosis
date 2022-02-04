@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Vuforia;
 
 public class AnamorphicTransformer : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class AnamorphicTransformer : MonoBehaviour
     [SerializeField] GameObject[] markerArray;
     [SerializeField] GameObject[] sliceArray;
     [SerializeField] GameObject solutionPoint;
-    string newMode;
+    string newMode = ParamConstants.Tracking_Modes.ZERO_MARKER_MODE;
     //int tracker;
 
     // repositioner/scaler
@@ -19,6 +20,7 @@ public class AnamorphicTransformer : MonoBehaviour
     private Vector3 centerPosition;
     List<Vector3> targetPosition = new List<Vector3>();
 
+    private bool firstTrack = true;
     // solution checking
     private bool tracking;
 
@@ -27,9 +29,8 @@ public class AnamorphicTransformer : MonoBehaviour
     void Start()
     {
         EventBroadcaster.Instance.AddObserver(EventNames.Anamorphosis_Events.ON_MARKER_MODE_CHANGE, this.OnMarkerModeChange);
-
-        newMode = ParamConstants.Tracking_Modes.ZERO_MARKER_MODE;
         tracking = false;
+        Debug.Log("INIT: " + newMode);
     }
 
     void Update()
@@ -45,9 +46,9 @@ public class AnamorphicTransformer : MonoBehaviour
             float sol_y = solutionPoint.transform.position.y;
             float sol_z = solutionPoint.transform.position.z;
 
-            Debug.Log("Positions");
-            Debug.Log(camera.transform.position);
-            Debug.Log(solutionPoint.transform.position);
+            // Debug.Log("Positions");
+            // Debug.Log(camera.transform.position);
+            // Debug.Log(solutionPoint.transform.position);
 
             bool goodX = cam_x > sol_x-0.02 && cam_x < sol_x+0.02;
             bool goodY = cam_y > sol_y-0.02 && cam_y < sol_y+0.02;
@@ -71,12 +72,11 @@ public class AnamorphicTransformer : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-            Debug.Log("DELETED");
         }
 
         // get new marker mode
         newMode = parameters.GetStringExtra(ParamConstants.Extra_Keys.MARKER_MODE, ParamConstants.Tracking_Modes.ZERO_MARKER_MODE);
-        Debug.Log(newMode);
+        Debug.Log("NEW: " + newMode);
 
         // reposition model holder
         Reposition();
@@ -91,8 +91,7 @@ public class AnamorphicTransformer : MonoBehaviour
             tracking = true;
         }
         else
-            tracking = false;   
-            
+            tracking = false; 
     }
 
     private void Anamorphosize()
@@ -106,16 +105,16 @@ public class AnamorphicTransformer : MonoBehaviour
             /**
             * Randomizing scale
             */
-            Debug.Log("Original" + origslice.transform.position);
+            //Debug.Log("Original" + origslice.transform.position);
             GameObject slice = GameObject.Instantiate(origslice, origslice.transform.position, origslice.transform.rotation);
             
-            Debug.Log("Copy" + slice.transform.position);
+            //Debug.Log("Copy" + slice.transform.position);
             slice.SetActive(true);
 
+            Debug.Log("OLD SLICE: " + slice.transform.position.ToString("F3"));
             //randomly scale
             float s = UnityEngine.Random.value + 0.5f;
             slice.transform.localScale *= s;
-            //Debug.Log(s);
 
             //reposition x
             float mx = slice.transform.position.x;
@@ -130,23 +129,20 @@ public class AnamorphicTransformer : MonoBehaviour
             float nz = cz - ((cz - mz) * s);
 
             slice.transform.position = new Vector3(nx, ny, nz);
-            Debug.Log("After" + slice.transform.position);
+            Debug.Log("NEW SLICE: " + slice.transform.position.ToString("F3"));
 
             /**
             * Change parent based on scale
             */
 
-            //Debug.Log(newMode);
             // for one marker, parent everything to that marker
             if(newMode == ParamConstants.Tracking_Modes.ONE_MARKER_MODE)
             {
-                //Debug.Log("PLACED IN ONE");
                 slice.transform.parent = markerArray[0].transform;
             }
             // for two markers, parent larger slices to farther marker, smmaller to closer marker
             else if(newMode == ParamConstants.Tracking_Modes.TWO_MARKER_MODE)
             {
-                //Debug.Log("PLACED IN TWO");
                 if(s > 1.0f) //check if father/closer to the solution point
                     slice.transform.parent = markerArray[0].transform;
                 else
@@ -156,7 +152,6 @@ public class AnamorphicTransformer : MonoBehaviour
             // then parent to left marker if closer to left, accordingly for right marker
             else if(newMode == ParamConstants.Tracking_Modes.FOUR_MARKER_MODE)
             {
-                //Debug.Log("PLACED IN THREE");
                 if(s > 1.0f) //check if father/closer to the solution point
                 {
                     float xmid = (markerArray[0].transform.position.x + markerArray[1].transform.position.x)/2;
@@ -176,11 +171,11 @@ public class AnamorphicTransformer : MonoBehaviour
             }
             else
             {
-                //Debug.Log("PLACED IN ZERO");
                 Destroy(slice);
             }
         }
-        //Debug.Log("ANAMORPHOSIZED");
+
+        Debug.Log("ANA DONE");
     }
 
     private void Reposition()
@@ -203,6 +198,10 @@ public class AnamorphicTransformer : MonoBehaviour
             
             // get the center of all markers in the list
             centerPosition = getCenterPosition(this.targetPosition);
+            Debug.Log("CENTER: " + centerPosition.ToString("F3"));
+            Debug.Log("PEBBLES: " + markerArray[0].transform.position.ToString("F3"));
+            Debug.Log("MODEL: " + model.transform.position.ToString("F3"));
+            Debug.Log("SOL: " + solutionPoint.transform.position.ToString("F3"));
 
             // contains the maximum x and y distances among the marker/s
             Vector3 max = getMaxVector(this.targetPosition);
@@ -211,20 +210,29 @@ public class AnamorphicTransformer : MonoBehaviour
             // scale starts at 1, and scales linearly depending on the distance of the two markers
             this.scale = 1f + (float)markerdist;
 
-            if (this.scale > 1.5) // refers to the length of 2 markers
-                this.model.SetActive(false); // deactivates the model
-            else if (this.model.activeInHierarchy == false)
-                this.model.SetActive(true); // activates the model
+            if(newMode == ParamConstants.Tracking_Modes.TWO_MARKER_MODE)
+                this.scale = this.scale*1.5f;
+            else if(newMode == ParamConstants.Tracking_Modes.FOUR_MARKER_MODE)
+                this.scale = this.scale*2f;
+
+            // if (this.scale > 1.5) // refers to the length of 2 markers
+            //     this.model.SetActive(false); // deactivates the model
+            // else if (this.model.activeInHierarchy == false)
+            //     this.model.SetActive(true); // activates the model
 
             // the positions also needs to scale to preserve anamorphism
             // the rotation follows the main target's rotation
+            
             model.transform.localScale = new Vector3(scale, scale, scale);
             model.transform.position = centerPosition;
 
-            Debug.Log(centerPosition);
+            Debug.Log("MODEL NEW: " + model.transform.position.ToString("F3"));
+            Debug.Log("SOL NEW: " + solutionPoint.transform.position.ToString("F3"));
 
             this.targetPosition.Clear();
         }
+
+        Debug.Log("REPO DONE");
     }
 
     // returns the Vector3 center position of the markers in the list
