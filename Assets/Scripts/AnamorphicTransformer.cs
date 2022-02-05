@@ -205,7 +205,7 @@ public class AnamorphicTransformer : MonoBehaviour
 
             // contains the maximum x and y distances among the marker/s
             Vector3 max = getMaxVector(this.targetPosition);
-            this.markerdist = max.z;
+            this.markerdist = max.z > max.x ? max.z : max.x;
 
             // scale starts at 1, and scales linearly depending on the distance of the two markers
             this.scale = 1f + (float)markerdist;
