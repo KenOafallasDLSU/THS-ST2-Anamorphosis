@@ -130,6 +130,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5165075437118823564, guid: b263e40f3017c444dad8f6fecf74a19c, type: 3}
+      propertyPath: m_Text
+      value: "Arrange your printed markers \ron a tabletop and watch the 3D \rpieces
+        magically appear.\n\n\r\rPlay around with different\r camera angles and figure
+        out\r which perspective completes the \r3D sculpture!"
+      objectReference: {fileID: 0}
     - target: {fileID: 8770150520388428763, guid: b263e40f3017c444dad8f6fecf74a19c, type: 3}
       propertyPath: m_RootOrder
       value: 2

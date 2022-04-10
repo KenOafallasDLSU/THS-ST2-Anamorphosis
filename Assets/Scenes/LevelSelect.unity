@@ -346,6 +346,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6956264920864758884, guid: ffc724b0c7792c04dbb533874e7045b1, type: 3}
+      propertyPath: m_Text
+      value: "Arrange your printed markers \ron a tabletop and watch the 3D \rpieces
+        magically appear.\n\n\r\rPlay around with different\r camera angles and figure
+        out\r which perspective completes the \r3D sculpture!"
+      objectReference: {fileID: 0}
     - target: {fileID: 8019110283821310381, guid: ffc724b0c7792c04dbb533874e7045b1, type: 3}
       propertyPath: m_Camera
       value: 

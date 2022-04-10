@@ -80,7 +80,7 @@ MonoBehaviour:
     m_LineSpacing: 1.1
   m_Text: "Arrange your printed markers \ron a tabletop and watch the 3D \rpieces
     magically appear.\n\n\r\rPlay around with different\r camera angles and figure
-    out\r which perspective brings the \r3D sculpture to life!"
+    out\r which perspective completes the 3D sculpture whole!"
 --- !u!1 &436824114903913972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1872,7 +1872,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8770150521818667586}
         m_TargetAssemblyTypeName: UI, Assembly-CSharp
-        m_MethodName: backToMain
+        m_MethodName: hideInst
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1749,6 +1749,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4339910646648963, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5719c9feb0422fc47b2ec88028e9309e, type: 3}
     - target: {fileID: 944572806754962753, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1837,14 +1841,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameProperUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 154
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648634148093042155, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 2921048808837213424, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2bf36c05050a6c04aaafcaf159637e6c, type: 3}
+    - target: {fileID: 4994958783530708271, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 268
+      objectReference: {fileID: 0}
+    - target: {fileID: 4994958783530708271, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -130
+      objectReference: {fileID: 0}
     - target: {fileID: 5320526932232414397, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: LevelFour
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342119564309123968, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 268
+      objectReference: {fileID: 0}
+    - target: {fileID: 7342119564309123968, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 7741559361734546320, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
       propertyPath: boundingBox
       value: 
       objectReference: {fileID: 4577948115116037285}
+    - target: {fileID: 8808280995261323326, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
+      propertyPath: m_Text
+      value: "Arrange your printed markers \ron a tabletop and watch the 3D \rpieces
+        magically appear.\n\n\r\rPlay around with different\r camera angles and figure
+        out\r which perspective completes the \r3D sculpture!"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1044ca4dc9a8ce48a7f8a1c5ee64ed4, type: 3}
 --- !u!1 &2016253939217138194

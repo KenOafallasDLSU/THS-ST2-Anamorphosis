@@ -28,20 +28,12 @@ public class UI : MonoBehaviour
 
     public void showInst()
     {
-        // startBtn.gameObject.SetActive(false);
-        // exitBtn.gameObject.SetActive(false);
-        // title.gameObject.SetActive(false);
-        // helpBtn.gameObject.SetActive(false);
         instructions.gameObject.SetActive(true);
         closeBtn.gameObject.SetActive(true);
     }
 
-    public void backToMain()
+    public void hideInst()
     {
-        // startBtn.gameObject.SetActive(true);
-        // exitBtn.gameObject.SetActive(true);
-        // title.gameObject.SetActive(true);
-        // helpBtn.gameObject.SetActive(true);
         instructions.gameObject.SetActive(false);
         closeBtn.gameObject.SetActive(false);
     }
